@@ -1,6 +1,6 @@
 /**
-* Template Name: Flattern
-* Template URL: https://bootstrapmade.com/flattern-multipurpose-bootstrap-template/
+* Template Name: UpConstruction
+* Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
 * Updated: Aug 07 2024 with Bootstrap v5.3.3
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
@@ -103,19 +103,6 @@
   window.addEventListener('load', aosInit);
 
   /**
-   * Auto generate the carousel indicators
-   */
-  document.querySelectorAll('.carousel-indicators').forEach((carouselIndicator) => {
-    carouselIndicator.closest('.carousel').querySelectorAll('.carousel-item').forEach((carouselItem, index) => {
-      if (index === 0) {
-        carouselIndicator.innerHTML += `<li data-bs-target="#${carouselIndicator.closest('.carousel').id}" data-bs-slide-to="${index}" class="active"></li>`;
-      } else {
-        carouselIndicator.innerHTML += `<li data-bs-target="#${carouselIndicator.closest('.carousel').id}" data-bs-slide-to="${index}"></li>`;
-      }
-    });
-  });
-
-  /**
    * Initiate glightbox
    */
   const glightbox = GLightbox({
@@ -156,23 +143,6 @@
   });
 
   /**
-   * Animate the skills items on reveal
-   */
-  let skillsAnimation = document.querySelectorAll('.skills-animation');
-  skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-      }
-    });
-  });
-
-  /**
    * Init swiper sliders
    */
   function initSwiper() {
@@ -190,5 +160,10 @@
   }
 
   window.addEventListener("load", initSwiper);
+
+  /**
+   * Initiate Pure Counter
+   */
+  new PureCounter();
 
 })();
